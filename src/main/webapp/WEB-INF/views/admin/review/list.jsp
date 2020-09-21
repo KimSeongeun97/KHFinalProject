@@ -14,7 +14,10 @@
 	font-weight: bold;
 	font-size: large;
 }
-
+#content {
+    margin: 35px;
+    text-align: center;
+}
 .pagingstyle{
  	width: 100%; 
  	padding-left: 45%;
@@ -23,7 +26,7 @@
 #footerbtn{
     position: absolute;
     right: 1.5%;
-    top: 15%;
+    top: 7%;
 }
 
 #serchbox{
@@ -31,7 +34,7 @@
 /* 	margin:0 ; */
 /* 	padding: 0; */
     position: absolute;
-    top: 15%;
+    top: 7%;
     right: -4.5%;
 }
 
@@ -96,6 +99,7 @@ $(document).ready(function(){
     	<a href="<%=request.getContextPath()  %>/admin/review/list">후기게시판 </a>
    	</div>
 
+ <div id="content"> 
 <!-- 제목 검색 -->
 	<div id="serchbox" >
 	<form action="${pageContext.request.contextPath}/admin/review/search" method="post">
@@ -152,7 +156,7 @@ $(document).ready(function(){
 	<tr>
 	    <td style="width: 5%"><input type="checkbox" name="checkRow" value="${review.REVIEW_NO}" id="checkRow"/></td>
 		<td style="width: 10%">${review.REVIEW_NO }</td>
-		<td style="width: 10%"><div class="txt_line_content">${review.USER_ID }</div></td>
+		<td style="width: 10%"><div class="">${review.USER_ID }</div></td>
 		<td style="width: 50%;">
 			<div class="txt_line_title" >
 				${review.REVIEW_CONTENT }
@@ -173,7 +177,7 @@ $(document).ready(function(){
 	<c:import url="/WEB-INF/paging/admin/review/reviewlistPaging.jsp"></c:import>
 	</div>
 
-
+</div>
 
 <!-- 관리자 페이지 footer --> 
 <c:import url="/WEB-INF/layout/admin/adminFooter.jsp"></c:import>
